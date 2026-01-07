@@ -1,0 +1,131 @@
+clear all
+close all
+
+%% PATH PLANNING %% 
+wait_time = 0.1;  % wait time of signal
+
+x_bound = [-200, 50];
+y_bound = [-10, 120];
+z_bound = [-50, 0];
+
+[final_path, final_yaw] = plan_path();
+
+%% MODEL LAUNCH %%
+load('pid_gains.mat');
+% Simulation time vector
+t = 0:0.01:20; 
+
+% Define a constant wind force in the x-direction (in Newtons)
+wind_force_x = 5; 
+wind_force_y = 0;
+wind_force_z = 0;
+
+% Create a matrix where the first column is time and the remaining columns are the force values.
+wind_data = [t', repmat([wind_force_x, wind_force_y, wind_force_z], length(t), 1)];
+
+[x_in, y_in, z_in, yaw_in] = compute_sim_in(final_path, final_yaw, wait_time);
+
+global K_px K_dx K_py K_dy K_pz K_dz K_p_phi K_d_phi K_p_theta K_d_theta K_p_psi K_d_psi Jr I_mat L k b m g wind_speeds;
+
+K_px = 0.6; 
+K_dx = 0.035; 
+K_py = 0.81; 
+K_dy = 0.06; 
+K_pz = 7;
+K_dz = 5;
+
+K_p_phi = 0.1;
+K_d_phi = 0.0002;
+K_p_theta = 0.75;
+K_d_theta = 0.001;
+K_p_psi = 0.05;
+K_d_psi = 0.07;
+
+w = 20;
+
+% K_px = 0; 
+% K_dx = 0; 
+% K_py = 0; 
+% K_dy = 0; 
+% K_pz = 0;
+% K_dz = 0;
+% 
+% K_p_phi = 0;
+% K_d_phi = 0;
+% K_p_theta = 0;
+% K_d_theta = 0;
+% K_p_psi = 0;
+% K_d_psi = 0;
+
+
+Jr = 6.8145025e-06;  % rotational moment of inertia
+Ixx = 0.0231693085;  % moment of inertia at x-axis
+Iyy = 0.0231693085;  % moment of inertia at y-axis
+Izz = 0.0449757165;  % moment of inertia at z-axis
+I_mat = diag([Ixx Iyy Izz]);
+L = 0.1651;  % arm length of quadrotor
+k = 0.09;  % lift coefficient
+drag = 0.07;  % drag coefficient
+b = 0.07;
+m = 2;  % quadrotor mass
+g = 9.81;
+drone_mass = 2
+
+% Example for 3 wind speeds
+wind_speeds = [8, 5, 10]; % m/s
+wind_speed = 0
+
+%sim(['ThirdTry.slx']);
+%sim(['Quadrotor_Model.slx']);
+%sim(['Experimental_PIDAutotuner.slx']); 
+%sim(['LookUpTest.slx']);
+%sim(["DoubleCheckMath.slx"]);
+%sim(["Experimental_AutotuningIsolated.slx"]);
+%sim(["Experimental_RewiringForces"]);
+%sim(["Experimental_FixingAutotuner.slx"]);
+%sim(["ProjectHelp"])
+sim(["quadcopter_package_deliveryOG.slx"]);
+fprintf("Simulation finished")
+
+%% PLOT RESULT %%
+
+plot_path_2d(final_path, x_out, y_out, x_bound, y_bound);
+plot_path_3d(final_path, x_out, y_out, z_out, x_bound, y_bound, z_bound);
+
+
+
+
+%% Save Data %%
+
+% PID_gains.wind_speeds = wind_speeds;
+% PID_gains.Kpx = k_pxAuto;
+% PID_gains.Kix = k_ixAuto;
+% PID_gains.Kdx = k_dxAuto;
+% 
+% PID_gains.Kpy = k_pyAuto;
+% PID_gains.Kiy = k_iyAuto;
+% PID_gains.Kdy = k_dyAuto;
+% 
+% PID_gains.Kpz = k_pzAuto;
+% PID_gains.Kiz = k_izAuto;
+% PID_gains.Kdz = k_dzAuto;
+% 
+% PID_gains.Kpphi = k_pphiAuto;
+% PID_gains.Kiphi = k_dphiAuto;
+% 
+% PID_gains.Kptheta = k_pthetaAuto;
+% PID_gains.Kdtheta = k_dthetaAuto;
+% 
+% PID_gains.Kppsi = k_ppsiAuto;
+% PID_gains.Kdpsi = k_dpsiAuto;
+% 
+% PID_gains.timestamp = datetime('now');
+% 
+% 
+% save('pid_gains.mat', 'PID_gains', "-append");
+% 
+% data = load('pid_gains.mat');
+% 
+% % Load file and print PID gains in table format
+% S = load('pid_gains.mat','PID_gains');
+% disp(struct2table(S.PID_gains))
