@@ -1,15 +1,15 @@
-# Monte Carlo UAV Validation Framework
+# UDE Drone Control System with Monte Carlo Validation
 
-**Robustness benchmarking of Nonlinear UDE vs. Linear PID controllers using stochastic flight simulations.**
+This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to the standard linear PID controllers using flight simulations with stochastic wind.
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2024a-orange.svg)
 ![Simulink](https://img.shields.io/badge/Simulink-Model--Based%20Design-blue.svg)
 ![Status](https://img.shields.io/badge/Status-Validated-brightgreen.svg)
 
-## 📌 Project Overview
-This repository contains a rigorous **Verification & Validation (V&V)** framework for Quadcopter control systems. 
+## Project Overview
+This repository contains a rigorous **Verification & Validation (V&V)** framework for an improved Quadcopter control system. 
 
-It utilizes **MATLAB, Simulink, and Simscape** to automate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–15 m/s) and payload mass shifts—to quantify the "Operational Envelope" of advanced control laws.
+It utilizes **MATLAB, Simulink, and Simscape** to automate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) and payload mass shifts— of advanced control laws.
 
 ### Key Objectives
 * **Quantify Robustness:** Move beyond simple step-response tests to statistically valid failure analysis.
