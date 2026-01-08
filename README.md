@@ -4,7 +4,6 @@ This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE)
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2024a-orange.svg)
 ![Simulink](https://img.shields.io/badge/Simulink-Model--Based%20Design-blue.svg)
-![Status](https://img.shields.io/badge/Status-Validated-brightgreen.svg)
 
 ## Project Overview
 This repository contains a rigorous **Verification & Validation (V&V)** framework for an improved Quadcopter control system. 
