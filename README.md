@@ -1,19 +1,22 @@
 # UDE Drone Control System with Monte Carlo Validation
 
-This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to the standard linear PID controllers using flight simulations with stochastic wind.
-
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2024a-orange.svg)
 ![Simulink](https://img.shields.io/badge/Simulink-Model--Based%20Design-blue.svg)
 
 ## Project Overview
-This repository contains a rigorous **Verification & Validation (V&V)** framework for an improved Quadcopter control system. 
 
-It utilizes **MATLAB, Simulink, and Simscape** to automate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) and payload mass shifts— of advanced control laws.
+This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to the standard linear PID controllers using flight simulations with stochastic wind. It also includes a **Verification & Validation** framework to test the improved Quadcopter control system. 
+
+It utilizes **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) and payload mass shifts— of advanced control laws.
 
 ### Key Objectives
 * **Quantify Robustness:** Move beyond simple step-response tests to statistically valid failure analysis.
 * **Energy vs. Accuracy:** Analyze the cost of precision using high-fidelity electromechanical motor models.
 * **Failure Mode Detection:** Identify edge cases (e.g., actuator saturation) that only appear under stochastic loading.
+
+
+https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
+
 
 ---
 
@@ -37,36 +40,6 @@ It utilizes **MATLAB, Simulink, and Simscape** to automate **1,000+ Monte Carlo 
 * **Crash Detection Logic:** Automatically flags unstable flights (RMSE > 30m) to calculate reliability rates.
 * **Advanced Analytics:** Calculates complex metrics like *Disturbance Rejection Ratio*, *Integral Absolute Error (IAE)*, and *Control Effort (Jerk)*.
 
----
-
-## 🚀 How to Run the Simulation
-
-### Prerequisites
-* MATLAB R2022b or newer
-* Simulink
-* Simscape Electrical (for the motor models)
-
-### Setup & Execution
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/YOUR_USERNAME/Monte-Carlo-UAV-Validation.git](https://github.com/YOUR_USERNAME/Monte-Carlo-UAV-Validation.git)
-    cd Monte-Carlo-UAV-Validation
-    ```
-
-2.  **Run the Master Script:**
-    Open MATLAB and execute:
-    ```matlab
-    run_master_simulation
-    ```
-
-3.  **View Results:**
-    * The script will print a statistical report to the Command Window (Safety Margins, Sensitivity Analysis).
-    * It will generate 3 plots:
-        1.  **Trend Analysis:** Wind Speed vs. Accuracy Improvement.
-        2.  **Histogram:** Distribution of performance gains.
-        3.  **Efficiency Frontier:** Energy (Joules) vs. Error (RMSE).
-
----
 
 ## 📂 File Structure
 
