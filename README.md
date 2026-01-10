@@ -40,16 +40,6 @@ https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 * **Crash Detection Logic:** Automatically flags unstable flights (RMSE > 30m) to calculate reliability rates.
 * **Advanced Analytics:** Calculates complex metrics like *Disturbance Rejection Ratio*, *Integral Absolute Error (IAE)*, and *Control Effort (Jerk)*.
 
-
-## 📂 File Structure
-
-```text
-├── run_master_simulation.m        # ENTRY POINT: Main Monte Carlo automation script
-├── quadcopter_package_delivery.slx # The Simulink Plant & Controller Model
-├── quadcopter_package_data.m       # Physical parameters (Mass, Inertia, Motor constants)
-├── quadcopter_package_select_trajectory.m # Waypoint generation logic
-└── utils/                          # Helper functions for Spline generation and Visualization
-
 ## Acknowledgements
 
 This project used MathWork's Quadcopter Package Delivery Drone simulation as a visual aid for tuning and testing the control system, and implemented the control system by modifying the pre-existing drone model.
