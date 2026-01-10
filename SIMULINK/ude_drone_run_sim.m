@@ -50,15 +50,15 @@ quadcopter_package_delivery_plot1pvo;
 
 [waypoints, timespot_spl, spline_data, spline_yaw, wayp_path_vis] = quadcopter_package_select_trajectory(4);
 
-m = 2; 
-wind_speed = 5;
-const_s = 0.05; 
-ude_on = 0; 
+m = 2; % drone mass
+wind_speed = 0.19;
+const_s = 0.05; % Laplace Transformation Constant
+ude_on = 0; % ude_on = 0 for off, ude_on = 1 for on
 
 quadcopter_package_plot_trajectory(waypoints, timespot_spl, spline_data, spline_yaw)
 sim('ude_drone');
-quadcopter_package_delivery_plot2xyz;
-quadcopter_package_delivery_plot1pvo;
+% quadcopter_package_delivery_plot2xyz;
+% quadcopter_package_delivery_plot1pvo;
  
 
 error_test = error_data;
