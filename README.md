@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to the standard linear PID controllers using flight simulations with stochastic wind. It also includes a **Verification & Validation** framework to test the improved Quadcopter control system. 
+This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to a standard linear PID controller using flight simulations with stochastic wind. It also includes a **Verification & Validation** framework to test the improved Quadcopter control system. 
 
 It utilizes **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) and payload mass shifts— of advanced control laws.
 
@@ -42,8 +42,8 @@ https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 
 ## Acknowledgements
 
-This project used MathWork's Quadcopter Package Delivery Drone simulation as a visual aid for tuning and testing the control system, and implemented the control system by modifying the pre-existing drone model.
-https://www.mathworks.com/help/sps/ug/quadcopter-drone.html
+**Research Context**
+This work was conducted in collaboration with the **Aerial Robotics Club**, a division of the [Flight Systems and Control (FSC) Research Lab](https://flight.utias.utoronto.ca/) at the **University of Toronto Institute for Aerospace Studies (UTIAS)**.
 
-This project was also done in collaboration with the Aerial Robotics Club, a section of the Flight Systems and Control research lab at the University of Toronto Institute for Aerospace Studies.
-https://flight.utias.utoronto.ca/
+**Simulation Platform**
+The visualization and plant model baseline were adapted from the [MathWorks Quadcopter Package Delivery](https://www.mathworks.com/help/sps/ug/quadcopter-drone.html) example. The control architecture was completely re-engineered from the default implementation to support the custom UDE/PID comparison study.
