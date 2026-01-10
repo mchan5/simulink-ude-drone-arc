@@ -49,3 +49,11 @@ https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 ├── quadcopter_package_data.m       # Physical parameters (Mass, Inertia, Motor constants)
 ├── quadcopter_package_select_trajectory.m # Waypoint generation logic
 └── utils/                          # Helper functions for Spline generation and Visualization
+
+## Acknowledgements
+
+This project used MathWork's Quadcopter Package Delivery Drone simulation as a visual aid for tuning and testing the control system, and implemented the control system by modifying the pre-existing drone model.
+https://www.mathworks.com/help/sps/ug/quadcopter-drone.html
+
+This project was also done in collaboration with the Aerial Robotics Club, a section of the Flight Systems and Control research lab at the University of Toronto Institute for Aerospace Studies.
+https://flight.utias.utoronto.ca/
