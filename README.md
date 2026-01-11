@@ -7,18 +7,11 @@
 
 This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to a standard linear PID controller using flight simulations with stochastic wind. It also includes a **Verification & Validation** framework to test the improved Quadcopter control system. 
 
-It utilizes **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) and payload mass shifts— of advanced control laws.
+The inspiration for this project was package delivery via drones in urban environments. The unique and inconsistent shape of buildings and houses causes wind to be unpredictable throughout a city, and can lead to safety risks if the drone veers off its desired trajectory, or crashes. 
 
-### Key Objectives
-* **Quantify Robustness:** Move beyond simple step-response tests to statistically valid failure analysis.
-* **Energy vs. Accuracy:** Analyze the cost of precision using high-fidelity electromechanical motor models.
-* **Failure Mode Detection:** Identify edge cases (e.g., actuator saturation) that only appear under stochastic loading.
-
+It uses **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) to verify its impact on safety, and the controller's robustness.
 
 https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
-
-
----
 
 ## 📊 Key Engineering Insights
 *Based on N=500 stochastic flight iterations.*
@@ -27,17 +20,12 @@ https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 | :--- | :--- | :--- |
 | **Accuracy Gain** | **+30.2%** | UDE significantly outperforms PID in nominal trajectory tracking. |
 | **Energy Cost** | **< 0.2%** | The nonlinear controller achieves higher precision with negligible battery penalty. |
-| **Safety Risk** | **3.4%** | Detected actuator saturation events in extreme high-wind scenarios. |
+| **Safety Risk** | **3.4%** | Detected actuator saturation events in extreme high-wind scenarios. 
 
-> **Conclusion:** The UDE architecture is the superior choice for precision operations in wind speeds <10 m/s. For hurricane-level disturbances (>10 m/s), a hybrid fallback to PID is recommended to prevent actuator saturation.
+**Conclusion:** The UDE controller shows great improvement from the standard PID controller.
 
----
-
-## 🛠️ Features
-* **Automated Monte Carlo Pipeline:** A Master Script that randomizes environmental parameters, runs the Simulink model, and aggregates data automatically.
-* **High-Fidelity Physics:** Uses **Simscape** for battery discharge curves and motor dynamics, ensuring energy metrics are realistic.
-* **Crash Detection Logic:** Automatically flags unstable flights (RMSE > 30m) to calculate reliability rates.
-* **Advanced Analytics:** Calculates complex metrics like *Disturbance Rejection Ratio*, *Integral Absolute Error (IAE)*, and *Control Effort (Jerk)*.
+**Future Development**
+Gain-scheduling, which is having a known table of parameter values depending on the wind-speed, could be introduced using the actuatory saturation data, as well as data from the Monte Carlo Simulation he actuatory saturation data can be used for gain-scheduling, adjusting the controller's parameters depending on the wind speed. This would make the controller more effective, and would further reduce any safety risks. 
 
 ## Acknowledgements
 
