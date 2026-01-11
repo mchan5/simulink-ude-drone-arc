@@ -13,7 +13,7 @@ It uses **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flig
 
 https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 
-## 📊 Key Engineering Insights
+## Results 
 *Based on N=500 stochastic flight iterations.*
 
 | Metric | Result | Engineering Implication |
