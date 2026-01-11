@@ -7,7 +7,7 @@
 
 This repository develops a nonlinear Uncertainty and Disturbance Estimator (UDE) controller, and compares it to a standard linear PID controller using flight simulations with stochastic wind. It also includes a **Verification & Validation** framework to test the improved Quadcopter control system. 
 
-The inspiration for this project was package delivery via drones in urban environments. The unique and inconsistent shape of buildings and houses causes wind to be unpredictable throughout a city, and can lead to safety risks if the drone veers off its desired trajectory, or crashes. 
+The inspiration for this project was to improve package delivery via drones in urban environments. The unique and inconsistent shape of buildings and houses causes wind to be unpredictable throughout a city, and can lead to safety risks if the drone veers off its desired trajectory. 
 
 It uses **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) to verify its impact on safety, and the controller's robustness.
 
