@@ -12,6 +12,7 @@ The inspiration for this project was to improve package delivery via drones in u
 It uses **MATLAB, Simulink, and Simscape** to simulate **1,000+ Monte Carlo flight iterations**, stress-testing a nonlinear **Uncertainty and Disturbance Estimator (UDE)** against a standard PID baseline. The simulation introduces stochastic environmental variables—including variable wind vectors (0–12.5 m/s) to verify its impact on safety, and the controller's robustness.
 
 https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
+<br></br>
 Simulated Drone with UDE Controller
 
 ## Results 
