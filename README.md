@@ -27,7 +27,6 @@ https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 | :--- | :--- | :--- |
 | **Accuracy Gain** | **+30.2%** | UDE significantly outperforms PID in nominal trajectory tracking. |
 | **Energy Cost** | **< 0.2%** | The nonlinear controller achieves higher precision with negligible battery penalty. |
-| **Wind Correlation** | **-0.91** | Performance degrades linearly with wind speed; UDE advantage vanishes at **9.6 m/s**. |
 | **Safety Risk** | **3.4%** | Detected actuator saturation events in extreme high-wind scenarios. |
 
 > **Conclusion:** The UDE architecture is the superior choice for precision operations in wind speeds <10 m/s. For hurricane-level disturbances (>10 m/s), a hybrid fallback to PID is recommended to prevent actuator saturation.
