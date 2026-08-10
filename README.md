@@ -29,6 +29,6 @@ https://github.com/user-attachments/assets/fd6ded8a-ac0b-4483-a743-47ebd13b87f3
 Gain-scheduling could be introduced using the actuator saturation data to adjust the controller's parameters depending on the wind speed. 
 
 ## Acknowledgements
-Thank you to [UTIAS Flight Systems and Control Research Lab](https://flight.utias.utoronto.ca/) for their advice for the development of this project.
+Thank you to [UTIAS Flight Systems and Control Research Lab](https://flight.utias.utoronto.ca/) for their advice on the development of this project.
 
 The visualization model was adapted from [MathWorks Quadcopter Package Delivery](https://www.mathworks.com/help/sps/ug/quadcopter-drone.html).
